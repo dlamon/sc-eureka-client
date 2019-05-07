@@ -1,0 +1,17 @@
+zone:
+  name: zb
+server:
+  port: 8084
+eureka:
+  instance:
+    metadata-map:
+      zone: zb
+    hostname: localhost
+  client:
+    region: chongqing
+    availability-zones:
+      chongqing: zb,sc,tc
+    service-url:
+      sc: http://eureka-sc:8761/eureka/
+      tc: http://eureka-tc:8762/eureka/
+      zb: http://eureka-zb:8763/eureka/

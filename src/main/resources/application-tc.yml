@@ -1,0 +1,17 @@
+zone:
+  name: tc
+server:
+  port: 8083
+eureka:
+  instance:
+    metadata-map:
+      zone: tc
+    hostname: localhost
+  client:
+    region: chongqing
+    availability-zones:
+      chongqing: tc,sc,zb
+    service-url:
+      sc: http://eureka-sc:8761/eureka/
+      tc: http://eureka-tc:8762/eureka/
+      zb: http://eureka-zb:8763/eureka/
